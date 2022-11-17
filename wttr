@@ -1,17 +1,14 @@
 import requests
 
+print('Введите город, где хотите узнать погоду')
+a = input()
 
-url = 'https://wttr.in/London?mMnqT&lang=ru'
+url_1 = 'https://wttr.in/'
+url_2 = '?mMnqT&lang=ru'
+url = url_1 + a + url_2
+
+
 response = requests.get(url)
 response.raise_for_status()
 print(response.text)
 
-url = 'https://wttr.in/SVO?mMnqT&lang=ru'
-response = requests.get(url)
-response.raise_for_status()
-print(response.text)
-
-url = 'https://wttr.in/Череповец?mMnqT&lang=ru'
-response = requests.get(url)
-response.raise_for_status()
-print(response.text)
